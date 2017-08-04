@@ -111,12 +111,12 @@ a:hover, a:active {
 .content {
   height: auto;
   float: right;
-  width: 60%;
+  width: 70%;
   margin-top: 60px;
 }
 
 .page-top {
-  width: 60%;
+  width: 70%;
   position: fixed;
   right: 0;
   z-index: 3;
@@ -143,8 +143,8 @@ a:hover, a:active {
 }
 .page-top .nav a.current {
   color: #5A5A5A;
-  padding-bottom: 22px;
-  border-bottom: 1px solid #5A5A5A;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #cd0000;
 }
 .page-top .information {
   float: right;
@@ -170,7 +170,7 @@ a:hover, a:active {
 }
 
 .sidebar {
-  width: 40%;
+  width: 30%;
   -webkit-background-size: cover;
   background-size: cover;
   background-color: #fff;
@@ -184,7 +184,7 @@ a:hover, a:active {
 }
 .sidebar .logo-title {
   text-align: center;
-  padding-top: 240px;
+  padding-top: 180px;
 }
 .sidebar .logo-title .description {
   font-size: 14px;

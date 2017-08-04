@@ -1,28 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Marys&#39;Blog</title>
-  
-  <link href="/atom.xml" rel="self"/>
-  
-  <link href="http://yoursite.com/"/>
-  <updated>2017-08-04T07:02:50.161Z</updated>
-  <id>http://yoursite.com/</id>
-  
-  <author>
-    <name>Marys Ma</name>
-    
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>javascript的设计模式（一）———— 多态</title>
-    <link href="http://yoursite.com/2017/08/03/javascript-design-pattern1/"/>
-    <id>http://yoursite.com/2017/08/03/javascript-design-pattern1/</id>
-    <published>2017-08-03T09:28:33.495Z</published>
-    <updated>2017-08-04T07:02:50.161Z</updated>
-    
-    <content type="html"><![CDATA[<p>从事前端有两年的时间了，一直觉得自己只致力于实践而忽视了理论上的知识，所以现在想边看《javascript设计模式与开发实践》这本书的同时边记录下自己的学习与理解。刚开始写自己的博文，嗯。。。不怎么会组织文字。。。还是快点开始正文吧^^</p>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><meta name="author" content="Marys Ma"><title>javascript的设计模式（一）———— 多态 · Marys'Blog</title><meta name="description" content="从事前端有两年的时间了，一直觉得自己只致力于实践而忽视了理论上的知识，所以现在想边看《javascript设计模式与开发实践》这本书的同时边记录下自己的学习与理解。刚开始写自己的博文，嗯。。。不怎么会组织文字。。。还是快点开始正文吧^^
+正文What is 设计模式？设计模式其主要思想就是面向对象编"><meta name="keywords" content="Hexo,HTML,CSS,android,Linux"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="renderer" content="webkit"><link rel="short icon" href="/images/head.jpg" type="image/x-icon"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/blog_basic.css"><link rel="stylesheet" href="/css/font-awesome.min.css"><link rel="alternate" type="application/atom+xml" title="ATOM 1.0" href="/atom.xml"></head><body><div class="sidebar animated fadeInDown"><div class="logo-title"><div class="title"><img src="/images/head.jpg" style="width:127px;"><h3 title=""><a href="/">Marys'Blog</a></h3><div class="description"><p>Marys'Blog</p></div></div></div><ul class="social-links"><li><a href="https://marysma.github.io/" target="_blank"><i class="fa fa-github"></i></a></li></ul><div class="footer"><a target="_blank" href="/"><span>Theme by </span></a><a href="https://www.caicai.me"> CaiCai </a><span>&</span><a href="https://github.com/Ben02/hexo-theme-Anatole"> Ben</a><div class="by_farbox"><a href="https://hexo.io/zh-cn/" target="_blank">Proudly published with Hexo&#65281;</a></div></div></div><div class="main"><div class="page-top animated fadeInDown"><div class="nav"><li><a href="/">首页</a></li><li><a href="/archives">归档</a></li></div><div class="information"><div class="back_btn"><li><a onclick="window.history.go(-1)" class="fa fa-chevron-left"></a></li></div><div class="avatar"><img src="/images/head.jpg"></div></div></div><div class="autopagerize_page_element"><div class="content"><div class="post-page"><div class="post animated fadeInDown"><div class="post-title"><h3><a>javascript的设计模式（一）———— 多态</a></h3></div><div class="post-content"><p>从事前端有两年的时间了，一直觉得自己只致力于实践而忽视了理论上的知识，所以现在想边看《javascript设计模式与开发实践》这本书的同时边记录下自己的学习与理解。刚开始写自己的博文，嗯。。。不怎么会组织文字。。。还是快点开始正文吧^^</p>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h3 id="What-is-设计模式？"><a href="#What-is-设计模式？" class="headerlink" title="What is 设计模式？"></a>What is 设计模式？</h3><p>设计模式其主要思想就是面向对象编程，即不在乎你是谁（is-A），而在于你可以做什么（Has-A）。就像你不必知道电视机里面有些什么、怎么焊接。。。你只要使用发明者提供给你的按钮或遥控器来使用它，就ok了。</p>
 
 <h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>设计模式主要是使用封装、继承、多态、组合等技术实现，而对象多态性的概念是其重要的基本编程思想。</p>
@@ -37,43 +14,4 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> person1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'小明'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> person2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">this</span>.name = <span class="string">'小红'</span>;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> showName = <span class="function"><span class="keyword">function</span>(<span class="params">person</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(person.name?person.name: <span class="string">'他没有名字'</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line">showName(<span class="keyword">new</span> person1); <span class="comment">//小明</span></div><div class="line">showName(<span class="keyword">new</span> person2); <span class="comment">//小红</span></div></pre></td></tr></table></figure>
 <p>上面的代码中，showName方法根本不用判断你是‘小明’还是‘小红’，它只负责显示对象的‘name’这一个属性，而name就是对象的其中一个状态表示，即使新增N个人，只要他拥有‘name’这个属性他就能显示出来，管理人员的人并不需要知道showName这个方法内部是如何运作。</p>
 
-<h4 id="Ps"><a href="#Ps" class="headerlink" title="Ps"></a>Ps</h4><p>js是一种动态语言，他没有类型检查，这对于利用对象多态特性进行编程来说十分的便利。而静态语言，在实现这种方式编程中不可避免的要经过类型检查这个关卡(本人觉得这是个非常蛋疼的过程)。静态语言实现方式在这里就不多讲了，有兴趣的人可以去看看《javascript设计模式与开发实践》中1.2.3节的介绍…^^</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;从事前端有两年的时间了，一直觉得自己只致力于实践而忽视了理论上的知识，所以现在想边看《javascript设计模式与开发实践》这本书的同时边记录下自己的学习与理解。刚开始写自己的博文，嗯。。。不怎么会组织文字。。。还是快点开始正文吧^^&lt;/p&gt;
-&lt;h1 id=&quot;正文&quot;&gt;&lt;a
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/08/01/hello-world/"/>
-    <id>http://yoursite.com/2017/08/01/hello-world/</id>
-    <published>2017-08-01T10:06:19.407Z</published>
-    <updated>2017-08-01T10:17:30.229Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick"><a href="#Quick" class="headerlink" title="Quick"></a>Quick</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-</feed>
+<h4 id="Ps"><a href="#Ps" class="headerlink" title="Ps"></a>Ps</h4><p>js是一种动态语言，他没有类型检查，这对于利用对象多态特性进行编程来说十分的便利。而静态语言，在实现这种方式编程中不可避免的要经过类型检查这个关卡(本人觉得这是个非常蛋疼的过程)。静态语言实现方式在这里就不多讲了，有兴趣的人可以去看看《javascript设计模式与开发实践》中1.2.3节的介绍…^^</p></div><div class="post-footer"><div class="meta"><div class="info"><i class="fa fa-sun-o"></i><span class="date">2017-08-03</span><i class="fa fa-tag"></i></div></div></div></div><div class="share"><div class="evernote"><a href="javascript:(function(){EN_CLIP_HOST='http://www.evernote.com';try{var%20x=document.createElement('SCRIPT');x.type='text/javascript';x.src=EN_CLIP_HOST+'/public/bookmarkClipper.js?'+(new%20Date().getTime()/100000);document.getElementsByTagName('head')[0].appendChild(x);}catch(e){location.href=EN_CLIP_HOST+'/clip.action?url='+encodeURIComponent(location.href)+'&amp;title='+encodeURIComponent(document.title);}})();" ref="nofollow" target="_blank" class="fa fa-bookmark"></a></div><div class="weibo"><a href="javascript:void((function(s,d,e){try{}catch(e){}var f='http://service.weibo.com/share/share.php?',u=d.location.href,p=['url=',e(u),'&amp;title=',e(d.title),'&amp;appkey=2924220432'].join('');function a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=620,height=450,left=',(s.width-620)/2,',top=',(s.height-450)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent)){setTimeout(a,0)}else{a()}})(screen,document,encodeURIComponent));" class="fa fa-weibo"></a></div><div class="twitter"><a href="http://twitter.com/home?status=,http://yoursite.com/2017/08/03/javascript-design-pattern1/,Marys'Blog,javascript的设计模式（一）———— 多态,;" class="fa fa-twitter"></a></div></div><div class="pagination"><ul class="clearfix"><li class="next pagbuttons"><a role="navigation" href="/2017/08/01/hello-world/" title="Hello World" class="btn">下一篇</a></li></ul></div></div></div></div></div><script src="/js/jquery.js"></script><script src="/js/jquery-migrate-1.2.1.min.js"></script><script src="/js/jquery.appear.js"></script></body></html>

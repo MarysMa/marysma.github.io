@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/diary/javascript-design-pattern3/</loc>
+    
+    <lastmod>2017-11-29T09:30:57.941Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/diary/javascript-design-pattern2/</loc>
     
     <lastmod>2017-08-08T09:36:15.113Z</lastmod>
